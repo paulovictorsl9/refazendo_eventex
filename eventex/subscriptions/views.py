@@ -28,7 +28,7 @@ def create(request):
                  'subscriptions/subscriptions_email.txt',
                  form.cleaned_data)
 
-    # Subscription.objects.create(**form.cleaned_data)
+    Subscription.objects.create(**form.cleaned_data)
 
     #Feedback de sucesso
     messages.success(request, 'Inscrição realizada com sucesso!')

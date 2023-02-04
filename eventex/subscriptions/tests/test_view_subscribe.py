@@ -51,6 +51,9 @@ class InscricaoValida(TestCase):
     def testa_envio_de_email(self):
         self.assertEqual(1, len(mail.outbox))
 
+    def test_salvar_inscricao_no_banco(self):
+        self.assertTrue(Subscription.objects.exists())
+
 class InscricaoInvalida(TestCase):
     def setUp(self):
         self.response = self.client.post('/inscricao/', {})
@@ -71,6 +74,9 @@ class InscricaoInvalida(TestCase):
         """form apresenta erros"""
         form = self.response.context['form']
         self.assertTrue(form.errors)
+
+    def test_nao_salvar_inscricao_no_banco(self):
+        self.assertFalse(Subscription.objects.exists())
 
 class MensagemDeSucessoDeInscricao(TestCase):
     def setUp(self):
