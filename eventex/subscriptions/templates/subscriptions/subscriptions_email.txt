@@ -1,10 +1,10 @@
 Olá {{ name }} tudo bem?
 Muito obrigado pela sua inscrição no Eventex
 
-Nome: {{ name }}
-Email: {{ email }}
-CPF: {{ cpf }}
-Telefone: {{ phone }}
+Nome: {{ subscription.name }}
+Email: {{ subscription.email }}
+CPF: {{ subscription.cpf }}
+Telefone: {{ subscription.phone }}
 
 Em até 48 horas úteis, a nossa equipe entrará em contato com você
 
