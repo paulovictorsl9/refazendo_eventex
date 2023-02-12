@@ -24,6 +24,21 @@ class TestaFormularioDeInscricao(TestCase):
         form = self.make_validated_form(name='PAULO costa')
         self.assertEqual('Paulo Costa', form.cleaned_data['name'])
 
+    def testa_email_opcional(self):
+        """ Email é opcional"""
+        form = self.make_validated_form(email='')
+        self.assertFalse(form.errors)
+
+    def testa_telefone_opcional(self):
+        """telefone é opcional"""
+        form = self.make_validated_form(phone='')
+        self.assertFalse(form.errors)
+
+    def testa_se_colocou_email_ou_fone(self):
+        """telefone ou email devem ser inseridos"""
+        form = self.make_validated_form(email='', phone='')
+        self.assertListEqual(['__all__'], list(form.errors))
+
     def assertFormErrorCode(self, form, field, code):
         errors = form.errors.as_data()
         errors_list = errors[field]

@@ -80,4 +80,13 @@ class InscricaoInvalida(TestCase):
         self.assertFalse(Subscription.objects.exists())
 
 
+class TesteDeRegressaoDeTemplate(TestCase):
+    def testa_template_nao_tem_erros(self):
+        invalid_data = dict(name='Paulo Costa',
+            cpf='12345678901')
+        response = self.client.post(r('subscriptions:new'), invalid_data)
+
+        self.assertContains(response, '<ul class="errorlist nonfield">')
+
+
 
