@@ -1,0 +1,24 @@
+[
+{
+    "model": "core.speaker",
+    "pk": 1,
+    "fields": {
+        "name": "Alan Turing",
+        "slug": "alan-turing",
+        "photo": "https://cdn.britannica.com/81/191581-050-8C0A8CD3/Alan-Turing.jpg",
+        "website": "https://pt.wikipedia.org/wiki/Alan_Turing",
+        "description": "Matem�tico e decifrador de c�digos\r\nInventou o computador moderno, formalizou matematicamente o que � um algor�timo e de quebra salvou o mundo como o conhe�emos ao destro�ar a criptografia nazista"
+    }
+},
+{
+    "model": "core.speaker",
+    "pk": 2,
+    "fields": {
+        "name": "Grace Hopper",
+        "slug": "grace-hopper",
+        "photo": "https://www.timeforkids.com/wp-content/uploads/2020/08/Grace_003.jpg?w=926",
+        "website": "https://pt.wikipedia.org/wiki/Grace_Hopper",
+        "description": "Programadora e Almirante"
+    }
+}
+]

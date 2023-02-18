@@ -348,6 +348,9 @@ section header h2 {
 
 }
 
-
+.speakers img.photo{
+    float: left;
+    padding-right: 15px;
+}
 
 /* Fim Customização */
