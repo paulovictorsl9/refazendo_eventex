@@ -37,6 +37,7 @@ class NovaInscricaoGet(TestCase):
         form = self.response.context['form']
         self.assertIsInstance(form, SubscriptionForm)
 
+
 class NovaInscricaoValida(TestCase):
     def setUp(self):
         data = dict(name='Paulo Costa',
@@ -54,6 +55,7 @@ class NovaInscricaoValida(TestCase):
 
     def test_salvar_inscricao_no_banco(self):
         self.assertTrue(Subscription.objects.exists())
+
 
 class InscricaoInvalida(TestCase):
     def setUp(self):

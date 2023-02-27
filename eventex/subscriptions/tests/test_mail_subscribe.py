@@ -3,7 +3,6 @@ from django.core import mail
 from django.shortcuts import resolve_url as r
 
 
-
 class InscricaoValida(TestCase):
     def setUp(self):
         data = dict(name='Paulo Costa',

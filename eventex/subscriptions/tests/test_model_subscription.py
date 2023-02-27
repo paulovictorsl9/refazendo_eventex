@@ -1,7 +1,8 @@
 from datetime import datetime
-
+from django.shortcuts import resolve_url as r
 from django.test import TestCase
 from eventex.subscriptions.models import Subscription
+
 
 class SubscriptionModelTest(TestCase):
     def setUp(self):
@@ -26,6 +27,10 @@ class SubscriptionModelTest(TestCase):
     def test_pagamento_default_to_False(self):
         """Por padrão pagamento deve ser falso"""
         self.assertEqual(False, self.obj.paid)
+
+    def get_test_absolute_url(self):
+        url = r('subscriptions:detail', self.obj.pk)
+        self.assertEqual(url, self.obj.get_absolute_url())
 
 
 
