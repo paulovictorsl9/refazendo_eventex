@@ -7,3 +7,6 @@ def validade_cpf(value):
 
     if len(value) != 11:
         raise ValidationError('CPF deve conter 11 números.', 'length')
+
+
+

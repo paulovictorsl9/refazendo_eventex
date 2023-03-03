@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+
+
 <!-- OVERVIEW -->
 <section>
     <div class="content row padding-bottom-3 desktop-12 container">
@@ -34,4 +37,15 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var cpfInput = document.querySelector("#id_cpf");
+  cpfInput.addEventListener("input", function(event) {
+    var value = event.target.value;
+    event.target.value = value.replace(/[^0-9]/g, "");
+  });
+});
+</script>
+
 {% endblock content %}
